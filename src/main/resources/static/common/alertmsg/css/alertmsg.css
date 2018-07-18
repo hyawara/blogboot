@@ -1,0 +1,45 @@
+body {
+    margin: 0 auto;
+    padding: 0;
+}
+
+.alert-body {
+    font-family: '隶书';
+    width: 310px;
+    min-height: 80px;
+    background: #0E99FF;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-shadow: 0px 3px 0px #005dbe, 0 12px 3px -5px rgba(0, 0, 0, 0.34);
+    padding: 0px 0px 10px 0px;
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    margin-left: -155px;
+    z-index: 999;
+}
+
+.alert-title {
+    width: 100%;
+    height: 30px;
+    padding: 0px 0px 0px 0px;
+    line-height: 30px;
+    font-size: 26px;
+    text-align: center;
+    background: rgb(255, 123, 0);
+    color: #ffffff;
+}
+
+.alert-content {
+    min-height: 60px;
+    padding: 0px 5px 0px 5px;
+    font-size: 22px;
+    background: black;
+    color: #ffffff;
+}
+
+.alert-button {
+    width: 100%;
+    text-align: right;
+    padding: 5px 0px 0px 0px;
+}

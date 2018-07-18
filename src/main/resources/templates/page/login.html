@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>hello</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css"  href="/common/alertmsg/css/alertmsg.css"/>
+    <script type="text/javascript" src="/common/jquery/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="/common/alertmsg/js/sysUtils.js"></script>
+    <script type="text/javascript" src="/common/alertmsg/js/alertMsg.js"></script>
+    <script type="text/javascript">
+    	function checkUser () {
+    	    var userName = $("#userName").val();
+    	    var password = $("#password").val();
+    	    console.log(userName);
+    	    console.log(password);
+    	    $.ajax({
+    	        url: "/check.action",
+    	        type: "post",
+    	        dataType: "json",
+    	        data: {
+    	            userName: userName,
+    	            password: password
+    	        },
+    	        success: function (data) {
+    	            if (data.flag == "0") {
+    	                alertMsg.info("用户名或密码错误！");
+    	            } else {
+    	                window.location.href = "/index.action";
+    	            }
+    	        }
+    	    });
+    	}
+    </script>
+</head>
+<body>
+<!--/*@thymesVar id="name" type="java.lang.String"*/-->
+<p th:text="${name}"></p>
+<form>
+<input type="text" name="userName" id="userName"/>
+<input type="password" name="password" id="password"/>
+<input type="button" onclick="checkUser();" value="提交"/>
+</form>
+</body>
+</html>
